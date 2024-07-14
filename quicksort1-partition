@@ -1,0 +1,19 @@
+def partition(arr):
+    pivot = arr[0]
+    left = []
+    right = []
+    
+    for num in arr[1:]:
+        if num < pivot:
+            left.append(num)
+        else:
+            right.append(num)
+    
+    return left + [pivot] + right
+
+if __name__ == "__main__":
+    n = int(input().strip())
+    arr = list(map(int, input().strip().split()))
+    
+    result = partition(arr)
+    print(" ".join(map(str, result)))
