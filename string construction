@@ -1,0 +1,22 @@
+def stringc(q, queries):
+    results = []
+    for s in queries:
+        chars = set()
+        cost = 0
+        for char in s:
+            if char not in chars:
+                chars.add(char)
+                cost += 1
+        results.append(cost)
+    return results
+
+if __name__ == "__main__":
+    q = int(input().strip())
+    queries = []
+    for _ in range(q):
+        s = input().strip()
+        queries.append(s)
+    
+    results = stringc(q, queries)
+    for result in results:
+        print(result)
